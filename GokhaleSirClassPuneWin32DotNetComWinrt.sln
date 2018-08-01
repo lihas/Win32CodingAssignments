@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment1-firstProgram", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment2-WM_Paint", "Assignment2-WM_Paint", "{7B5F4115-417D-4D2A-AE85-5627827698E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WM_PAINT", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{1E8B9FDA-A549-4E3D-9E94-92D7072C1A56}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WM_PAINT", "WM_PAINT\WM_PAINT.vcxproj", "{1E8B9FDA-A549-4E3D-9E94-92D7072C1A56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
