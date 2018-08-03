@@ -1,0 +1,219 @@
+Microsoft (R) COFF/PE Dumper Version 14.00.24215.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file MyWindow.obj
+
+File Type: COFF OBJECT
+
+FILE HEADER VALUES
+             14C machine (x86)
+               C number of sections
+        5B4CA3BB time date stamp Mon Jul 16 19:25:07 2018
+            568B file pointer to symbol table
+              43 number of symbols
+               0 size of optional header
+               0 characteristics
+
+SECTION HEADER #1
+.drectve name
+       0 physical address
+       0 virtual address
+      6F size of raw data
+     1F4 file pointer to raw data (000001F4 to 00000262)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+  100A00 flags
+         Info
+         Remove
+         1 byte align
+
+SECTION HEADER #2
+.debug$S name
+       0 physical address
+       0 virtual address
+    48D0 size of raw data
+     263 file pointer to raw data (00000263 to 00004B32)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42100040 flags
+         Initialized Data
+         Discardable
+         1 byte align
+         Read Only
+
+SECTION HEADER #3
+.debug$T name
+       0 physical address
+       0 virtual address
+      90 size of raw data
+    4B33 file pointer to raw data (00004B33 to 00004BC2)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42100040 flags
+         Initialized Data
+         Discardable
+         1 byte align
+         Read Only
+
+SECTION HEADER #4
+.text$mn name
+       0 physical address
+       0 virtual address
+      78 size of raw data
+    4BC3 file pointer to raw data (00004BC3 to 00004C3A)
+    4C3B file pointer to relocation table
+       0 file pointer to line numbers
+       5 number of relocations
+       0 number of line numbers
+60501020 flags
+         Code
+         COMDAT; sym= "long __stdcall WndProc(struct HWND__ *,unsigned int,unsigned int,long)" (?WndProc@@YGJPAUHWND__@@IIJ@Z)
+         16 byte align
+         Execute Read
+
+SECTION HEADER #5
+.debug$S name
+       0 physical address
+       0 virtual address
+     13C size of raw data
+    4C6D file pointer to raw data (00004C6D to 00004DA8)
+    4DA9 file pointer to relocation table
+       0 file pointer to line numbers
+       9 number of relocations
+       0 number of line numbers
+42101040 flags
+         Initialized Data
+         COMDAT (no symbol)
+         Discardable
+         1 byte align
+         Read Only
+
+SECTION HEADER #6
+.text$mn name
+       0 physical address
+       0 virtual address
+     20B size of raw data
+    4E03 file pointer to raw data (00004E03 to 0000500D)
+    500E file pointer to relocation table
+       0 file pointer to line numbers
+      23 number of relocations
+       0 number of line numbers
+60501020 flags
+         Code
+         COMDAT; sym= _WinMain@16
+         16 byte align
+         Execute Read
+
+SECTION HEADER #7
+.debug$S name
+       0 physical address
+       0 virtual address
+     31C size of raw data
+    516C file pointer to raw data (0000516C to 00005487)
+    5488 file pointer to relocation table
+       0 file pointer to line numbers
+      25 number of relocations
+       0 number of line numbers
+42101040 flags
+         Initialized Data
+         COMDAT (no symbol)
+         Discardable
+         1 byte align
+         Read Only
+
+SECTION HEADER #8
+  .rdata name
+       0 physical address
+       0 virtual address
+       6 size of raw data
+    55FA file pointer to raw data (000055FA to 000055FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40301040 flags
+         Initialized Data
+         COMDAT; sym= "`string'" (??_C@_05FBFPOLKO@MyApp?$AA@)
+         4 byte align
+         Read Only
+
+SECTION HEADER #9
+  .rdata name
+       0 physical address
+       0 virtual address
+       F size of raw data
+    5600 file pointer to raw data (00005600 to 0000560E)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40301040 flags
+         Initialized Data
+         COMDAT; sym= "`string'" (??_C@_0P@LELPKJHI@My?5Application?$AA@)
+         4 byte align
+         Read Only
+
+SECTION HEADER #A
+.rtc$IMZ name
+       0 physical address
+       0 virtual address
+       4 size of raw data
+    560F file pointer to raw data (0000560F to 00005612)
+    5613 file pointer to relocation table
+       0 file pointer to line numbers
+       1 number of relocations
+       0 number of line numbers
+40301040 flags
+         Initialized Data
+         COMDAT; sym= __RTC_InitBase.rtc$IMZ
+         4 byte align
+         Read Only
+
+SECTION HEADER #B
+.rtc$TMZ name
+       0 physical address
+       0 virtual address
+       4 size of raw data
+    561D file pointer to raw data (0000561D to 00005620)
+    5621 file pointer to relocation table
+       0 file pointer to line numbers
+       1 number of relocations
+       0 number of line numbers
+40301040 flags
+         Initialized Data
+         COMDAT; sym= __RTC_Shutdown.rtc$TMZ
+         4 byte align
+         Read Only
+
+SECTION HEADER #C
+ .chks64 name
+       0 physical address
+       0 virtual address
+      60 size of raw data
+    562B file pointer to raw data (0000562B to 0000568A)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+     A00 flags
+         Info
+         Remove
+         (no align specified)
+
+  Summary
+
+          60 .chks64
+        4D28 .debug$S
+          90 .debug$T
+          6F .drectve
+          15 .rdata
+           4 .rtc$IMZ
+           4 .rtc$TMZ
+         283 .text$mn

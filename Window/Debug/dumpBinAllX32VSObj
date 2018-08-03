@@ -1,0 +1,6 @@
+Microsoft (R) COFF/PE Dumper Version 14.00.24215.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file Window.exe
+LINK : fatal error LNK1181: cannot open input file 'Window.exe'
