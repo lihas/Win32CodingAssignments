@@ -63,32 +63,38 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 {
     //code
     string msgs;
+    int msgIcon = MB_ICONERROR;
 
     switch (iMsg)
     {
     case WM_CREATE:
     {
         msgs = "WM_CREATE";
+        msgIcon = MB_ICONQUESTION;
     }
     break;
     case WM_LBUTTONDOWN:
     {
         msgs = "WM_LBUTTONDOWN";
+        msgIcon = MB_ICONERROR;
     }
     break;
     case WM_MOVE:
     {
         msgs = "WM_MOVE";
+        msgIcon = MB_ICONEXCLAMATION;
     }
     break;
     case WM_KEYDOWN:
     {
         msgs = "WM_KEYDOWN";
+        msgIcon = MB_ICONASTERISK;
     }
     break;
     case WM_SIZE:
     {
         msgs = "WM_SIZE";
+        msgIcon = MB_ICONINFORMATION;
     }
     break;
     case WM_DESTROY:
@@ -97,7 +103,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
     }
     if (!msgs.empty())
     {
-        MessageBoxA(NULL, msgs.c_str(), "Message Received is", MB_OK);
+        MessageBoxA(NULL, msgs.c_str(), "Message Received is", MB_OK | msgIcon);
     }
     return DefWindowProc(hwnd, iMsg, wParam, lParam);
 }

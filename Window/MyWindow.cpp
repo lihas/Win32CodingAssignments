@@ -53,9 +53,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
     switch (iMsg)
     {
     case WM_KEYDOWN:
+        break;
         MessageBoxA(hwnd, "", "WM_KEYDOWN", MB_OK);
         break;
     case WM_CHAR:
+        break;
         switch (wParam)
         {
         case 'A':
