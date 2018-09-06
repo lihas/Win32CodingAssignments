@@ -1,3 +1,4 @@
+#include<Windows.h>
 #include "World.h"
 
 
@@ -28,4 +29,13 @@ int World::generateUniformX()
 int World::generateUniformY()
 {
     return uniformDistY(pseudoRandomDeviceY);
+}
+
+int World::draw(HDC hDc)
+{
+    for (auto& particle : m_particles)
+    {
+        particle.draw(hDc);
+    }
+    return 0;
 }

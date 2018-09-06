@@ -22,5 +22,6 @@ class World
 public:
     World();
     ~World();
+    int draw(HDC hDc);
 };
 

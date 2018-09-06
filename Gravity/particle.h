@@ -1,4 +1,5 @@
 #pragma once
+#include<Windows.h>
 
  class _3DCoOrdinate
  {
@@ -38,5 +39,6 @@ public:
     Particle(Position position);
     ~Particle();
     bool SetPosition(Position position);
+    int draw(HDC hDc);
 };
 

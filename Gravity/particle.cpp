@@ -19,3 +19,9 @@ bool Particle::SetPosition(Position position)
 Particle::~Particle()
 {
 }
+
+
+int Particle::draw(HDC hDc)
+{
+    return 0;
+}
