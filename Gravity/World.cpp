@@ -4,7 +4,7 @@
 
 
 World::World()
-{
+{ 
     //uniform distribution of particles
 
     for (auto& particle : m_particles)
