@@ -5,7 +5,7 @@
 LRESULT WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
 
 Window::Window(HINSTANCE hInstance, int iCmdShow):m_className{TEXT("Gravity")}, m_windowName{TEXT("Gravity")}
-{
+{ 
     WNDCLASSEX wndclass;
     memset(&wndclass, 0, sizeof(wndclass));
     wndclass.cbSize = sizeof(wndclass);
