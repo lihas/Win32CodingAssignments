@@ -1,49 +1,31 @@
 #pragma once
 #include<Windows.h>
-
- class _3DCoOrdinate
- {
- public:
-     int x, y, z;
-     _3DCoOrdinate()
-     {
-         x = y = z = 0;
-     }
-     _3DCoOrdinate(int x, int y, int z)
-     {
-         this->x = x;
-         this->y = y;
-         this->z = z;
-     }
- };
-
- /*For strong typing*/
-#define Make3DCordType(_name)\
-class _name : public _3DCoOrdinate { public:\
-_name() = default;\
-_name(int x, int y, int z):_3DCoOrdinate(x, y, z)\
- {\
- }\
- };
-
- Make3DCordType(Position);
- Make3DCordType(Velocity);
- Make3DCordType(Acceleration);
- Make3DCordType(Color); //RGB
+#include "Common.h"
+#include <vector>
+ 
 
 class Particle
 {
     Position m_position;
+    Position m_PrevPosition;
+    std::vector<Position> m_PrevPositions;
     Velocity m_velocity;
-    Acceleration m_acceleration;
-    Color color {0,0,255};
-    float m_mass = 0;
+    Color m_color {0,0,255};
+    Force m_force{0,0,0};
+    HBRUSH m_fillBrush;
+    float m_width, m_height;
+    float m_mass = 100;
 
 public:
+    HPEN m_pen;
     Particle();
     Particle(Position position);
     ~Particle();
+    float GetMass();
+    Position GetPosition();
     bool SetPosition(Position position);
     int draw(HDC hDc);
+    int addForce(Force);
+    int step(); //move one unit of time given force, mass, position, and current velocity
 };
 
