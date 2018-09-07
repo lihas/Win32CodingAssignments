@@ -18,8 +18,13 @@
  };
 
  /*For strong typing*/
-#define Make3DCordType(name)\
-class name : public _3DCoOrdinate { };
+#define Make3DCordType(_name)\
+class _name : public _3DCoOrdinate { public:\
+_name() = default;\
+_name(int x, int y, int z):_3DCoOrdinate(x, y, z)\
+ {\
+ }\
+ };
 
  Make3DCordType(Position);
  Make3DCordType(Velocity);
@@ -31,7 +36,7 @@ class Particle
     Position m_position;
     Velocity m_velocity;
     Acceleration m_acceleration;
-    Color color = {0,0,255};
+    Color color {0,0,255};
     float m_mass = 0;
 
 public:
