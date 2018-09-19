@@ -100,6 +100,7 @@ HRESULT CSumSubtract::QueryInterface(REFIID riid, void **ppv)
         *ppv = NULL;
         return E_NOINTERFACE;
     }
+    reinterpret_cast<IUnknown*>(*ppv)->AddRef();
     return S_OK;
 }
 

@@ -15,19 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ClassFactoryDllServerWithRegFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Text Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ClassFactoryDllServerWithRegFile.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassFactoryDllServerWithRegFile.def">
+    <None Include="Source.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ServerRegister.reg" />
   </ItemGroup>
 </Project>

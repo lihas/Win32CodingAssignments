@@ -12,7 +12,7 @@ ISubtract *pISubtract = NULL;
 //WinMain
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-    WNDCLASSEX wndclass;
+    WNDCLASSEX wndclass = {};
     HWND hwnd;
     MSG msg;
     TCHAR AppName[] = TEXT("ComClient");
@@ -86,7 +86,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
         pISum->SumOfTwoIntegers(iNum1, iNum2, &iSum);
 
         //display result
-        wsprintf(str, TEXT("Sum of %d and %d = %d", iNum1, iNum2, iSum));
+        wsprintf(str, TEXT("Sum of %d and %d = %d"), iNum1, iNum2, iSum);
         MessageBox(hwnd, str, TEXT("Result"), MB_OK);
 
         //call query =interface on ISum to get ISubtract
