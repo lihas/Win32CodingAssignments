@@ -1,0 +1,1 @@
+From chapter 3 of vijay sir's notes
