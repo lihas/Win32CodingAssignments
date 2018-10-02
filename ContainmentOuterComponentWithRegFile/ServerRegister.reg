@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{772B9B2D-46A0-4695-A3B4-A06C7EE952B5}]
+@="OuterComDll_WithRegFile"
+[HKEY_CLASSES_ROOT\CLSID\{772B9B2D-46A0-4695-A3B4-A06C7EE952B5}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\ContainmentOuterComponentWithRegFile.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{07F9961F-C419-4619-9700-036936E5E5C7}]
+@="InnerComDll_WithRegFile"
+[HKEY_CLASSES_ROOT\CLSID\{07F9961F-C419-4619-9700-036936E5E5C7}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\ContainmentInnerComponentWithRegFile.dll"
