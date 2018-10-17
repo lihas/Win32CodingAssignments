@@ -1,0 +1,8 @@
+LIBRARY	DFT-DiscreteFourierTransform-DLL
+EXPORTS
+	GetDFT
+	GetSineWave
+	Figure
+	Stem
+	Plot
+	TimeEpochsToFrequencySpectrum

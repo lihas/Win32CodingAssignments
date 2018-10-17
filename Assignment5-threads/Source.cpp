@@ -73,8 +73,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
 
     hWindow = CreateWindow(className, TEXT("Multi Threading Demo"), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
 
-    hThread1 = CreateThread(nullptr, CREATE_SUSPENDED, thread1Function, &hWindow, 0, &thread1Id);
-    hThread2 = CreateThread(nullptr, CREATE_SUSPENDED, thread2Function, &hWindow, 0, &thread2Id);
+    hThread1 = CreateThread(nullptr, 0, thread1Function, &hWindow, CREATE_SUSPENDED, &thread1Id);
+    hThread2 = CreateThread(nullptr, 0, thread2Function, &hWindow, CREATE_SUSPENDED, &thread2Id);
     
     ShowWindow(hWindow, iCmdShow);
     UpdateWindow(hWindow);

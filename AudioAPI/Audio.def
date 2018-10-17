@@ -1,0 +1,6 @@
+LIBRARY AudioApi
+EXPORTS
+	InitAudio
+	StartRecording
+	StopRecording
+	PlayRecordedData
