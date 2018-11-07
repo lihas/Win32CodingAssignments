@@ -18,10 +18,32 @@
     <ClCompile Include="poppadd.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="popfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="popfind.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="popfont.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="POPPRNT0.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="POPPAD.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="POPPAD.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

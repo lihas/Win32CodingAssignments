@@ -56,14 +56,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         std::vector<std::complex<long double>> signal;
         std::vector<std::complex<long double>> signal2;
         std::vector<long double> signal_real, DFT_Real;
-        std::tie(time_epochs, signal) = GetSineWave(100);
-        std::tie(time_epochs, signal2) = GetSineWave(50);
+        std::tie(time_epochs, signal) = GetSineWave(30);
+        //std::tie(time_epochs, signal2) = GetSineWave(50);
        
-        for (int k = 0; k < signal2.size(); k++)
+        /*for (int k = 0; k < signal2.size(); k++)
         {
             signal[k] = signal[k] + signal2[k];
         }
-
+*/
         for (auto val : signal)
         {
             signal_real.push_back(std::abs(val));

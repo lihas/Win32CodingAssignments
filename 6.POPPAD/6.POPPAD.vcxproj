@@ -115,10 +115,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="popfile.c" />
+    <ClCompile Include="popfind.c" />
+    <ClCompile Include="popfont.c" />
     <ClCompile Include="poppadd.c" />
+    <ClCompile Include="POPPRNT0.C" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="POPPAD.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="POPPAD.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
