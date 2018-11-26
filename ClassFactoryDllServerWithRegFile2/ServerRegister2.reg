@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{8793F988-BCEF-4E89-995C-ECFDDDC2BE10}]
+@="ClassFactoryDllServerWithRegFile2"
+[HKEY_CLASSES_ROOT\CLSID\{8793F988-BCEF-4E89-995C-ECFDDDC2BE10}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\ClassFactoryDllServerWithRegFile2.dll"

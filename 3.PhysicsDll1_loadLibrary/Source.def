@@ -1,0 +1,4 @@
+LIBRARY PhysicsDll2
+EXPORTS
+	PtoV_inner PRIVATE
+	VtoP_inner PRIVATE

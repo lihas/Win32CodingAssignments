@@ -1,0 +1,4 @@
+LIBRARY PhysicsDll1
+EXPORTS
+	PtoV
+	VtoP
