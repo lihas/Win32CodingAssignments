@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{B1DF3824-DD13-483B-90FC-6F4EC9886D06}]
+@="AggregationInnerComponentWithRegFile"
+[HKEY_CLASSES_ROOT\CLSID\{B1DF3824-DD13-483B-90FC-6F4EC9886D06}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\AggregationInnerComponentWithRegFile.dll"
+
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{230A97DE-65C8-43BA-A067-6720E546DB4C}]
+@="AggregationOuterComponentWithRegFile"
+[HKEY_CLASSES_ROOT\CLSID\{230A97DE-65C8-43BA-A067-6720E546DB4C}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\AggregationOuterComponentWithRegFile.dll"

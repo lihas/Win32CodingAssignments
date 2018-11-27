@@ -17,9 +17,17 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-    volatile auto r = PtoV(10, 1, 100);
+
+    auto hr = CoInitialize(NULL);
+    if (FAILED(hr))
+    {
+        MessageBox(NULL, TEXT("COM Library cannot be initialized.\n Program will now exit"), TEXT("Program Error"), MB_OK);
+        exit(0);
+    }
 
     dialog::Run(hInstance);
+
+    CoUninitialize();
 
     return (int)msg.wParam;
 }

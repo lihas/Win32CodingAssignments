@@ -34,8 +34,10 @@
 #define IDC_KELVINS2     10016
 #define IDC_PE2          10017
 #define IDC_KELVIN2      10018
+#define IDC_MOLARITY2     IDC_KELVIN2
 #define IDC_SAVEFILE2    10019
 #define IDC_RESET2       10020
+#define IDC_compute2     IDC_RESET2
 #define IDC_GROUP2       10022
 
 

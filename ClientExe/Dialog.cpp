@@ -4,6 +4,7 @@
 #include "..\2.PhysicsDll1_implicitLink\Physics.h"
 #include <string>
 #include<fstream>
+#include "..\4.Chemistry_ClassFactoryServer\Molarity.h"
 
 #define PSCROLL_MIN 1
 #define PSCROLL_MAX 23
@@ -26,14 +27,27 @@ namespace dialog
 
     INT_PTR CALLBACK DialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
+        static bool initDialogDone = false;
         static unsigned int IDC_PS_pos=0, IDC_VS_pos=0, IDC_PS2_pos=0, IDC_VS2_pos=0;
+        static IMolarity* pMolarity = nullptr;
+
         switch (uMsg)
         {
         case WM_INITDIALOG:
         {
             CheckRadioButton(hwnd, IDC_SUBJECT_RADIO1, IDC_SUBJECT_RADIO1, IDC_SUBJECT_RADIO1);
             dialog::enableCharles(hwnd, FALSE);
-            return reset1(hwnd);
+            reset1(hwnd);
+
+            auto hr = CoCreateInstance(CLSID_Molarity, NULL, CLSCTX_INPROC_SERVER, IID_IMolarity, (void**)&pMolarity);
+            if (FAILED(hr))
+            {
+                MessageBox(hwnd, TEXT("IMolarity interface cannot be obtained"), TEXT("ERROR"), MB_OK);
+                EndDialog(hwnd, -1);
+            }
+
+            initDialogDone = true;
+            return TRUE;
         }
         break;
         case WM_HSCROLL:
@@ -118,40 +132,66 @@ namespace dialog
         case WM_CLOSE:
         {
             EndDialog(hwnd, 0);
+            if (pMolarity)
+            {
+                pMolarity->Release();
+                pMolarity = nullptr;
+            }
             return TRUE;
         }
         break;
         case WM_COMMAND:
         {
-            /*switch (HIWORD(wParam))
+            /*if (initDialogDone)
             {
-            case EN_CHANGE:
-            {
-                int ctrlId = LOWORD(wParam);
-                switch (ctrlId)
+                switch (HIWORD(wParam))
                 {
-                case IDC_PE:
+                case EN_CHANGE:
                 {
-                    TCHAR buff[MAX_PATH];
-                    GetDlgItemText(hwnd, ctrlId, buff, MAX_PATH);
-                    float Pr = atof(buff);
-                    boylesSetP(hwnd, Pr);
+                    int ctrlId = LOWORD(wParam);
+                    switch (ctrlId)
+                    {
+                    case IDC_PE:
+                    {
+                        TCHAR buff[MAX_PATH];
+                        GetDlgItemText(hwnd, ctrlId, buff, MAX_PATH);
+                        float Pr = atof(buff);
+                        boylesSetP(hwnd, Pr);
+                    }
+                    break;
+                    case IDC_VE:
+                    {
+                        TCHAR buff[MAX_PATH];
+                        GetDlgItemText(hwnd, ctrlId, buff, MAX_PATH);
+                        float Vl = atof(buff);
+                        boylesSetV(hwnd, Vl);
+                    }
+                    }
                 }
                 break;
-                case IDC_VE:
-                {
-                    TCHAR buff[MAX_PATH];
-                    GetDlgItemText(hwnd, ctrlId, buff, MAX_PATH);
-                    float Vl = atof(buff);
-                    boylesSetV(hwnd, Vl);
                 }
+        }*/
+            switch (LOWORD(wParam))
+            {
+            case IDC_compute2:
+            {
+                TCHAR buff[MAX_PATH];
+                GetDlgItemText(hwnd, IDC_MOLES2, buff, MAX_PATH);
+                int moles = atoi(buff);
+                GetDlgItemText(hwnd, IDC_VE2, buff, MAX_PATH);
+                int volume = atoi(buff);
+                if (pMolarity)
+                {
+                    float molarity;
+                    pMolarity->CalculateMolarity(moles, volume, &molarity);
+                    SetDlgItemText(hwnd, IDC_MOLARITY2, std::to_string(molarity).c_str());
+                }
+                else
+                {
+                    MessageBoxA(NULL, "pMolarity is null", "Error", MB_OK | MB_ICONERROR);
                 }
             }
             break;
-            }*/
-
-            switch (LOWORD(wParam))
-            {
             case IDC_SAVEFILE:
             {
                 std::ofstream of("boyles.txt", std::ios::app);

@@ -1,0 +1,4 @@
+LIBRARY	Chemistry_classFactory.dll
+EXPORTS
+	DllGetClassObject
+	DllCanUnloadNow

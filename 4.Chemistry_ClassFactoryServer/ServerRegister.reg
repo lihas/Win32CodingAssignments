@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{07B477A7-FDA9-44B7-8990-6C195741FCFF}]
+@="Chemistry_classFactory"
+[HKEY_CLASSES_ROOT\CLSID\{07B477A7-FDA9-44B7-8990-6C195741FCFF}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\Chemistry_classFactory.dll"
