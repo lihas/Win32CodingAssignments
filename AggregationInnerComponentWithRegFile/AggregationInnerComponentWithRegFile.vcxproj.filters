@@ -28,6 +28,6 @@
     <None Include="AggregationInnerComponentWithRegFile.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="AggregationInnerComponentWithRegFile.reg" />
+    <None Include="AggregationRegFile.reg" />
   </ItemGroup>
 </Project>
