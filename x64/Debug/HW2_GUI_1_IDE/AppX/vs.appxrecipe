@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SAHILS-LT</Machine>
+    <WindowsUser>sahils</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>55105031-7bee-47a3-be33-72300c62b7a7</PackageIdentityName>
+    <PackageIdentityPublisher>CN=sahils</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\x64\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\AppX</LayoutDir>
+    <RegisteredManifestChecksum>486A8F0F26A7CEE0093E1A01E480D95E0B29F9E97C63A6C74802AADFB89830D6</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>55105031-7bee-47a3-be33-72300c62b7a7_1.0.0.0_x64__8nj8btp4jfzkm</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>55105031-7bee-47a3-be33-72300c62b7a7_8nj8btp4jfzkm!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>55105031-7bee-47a3-be33-72300c62b7a7</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=sahils</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-05T14:30:40.778</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\HW2_GUI_1_IDE.exe">
+      <PackagePath>HW2_GUI_1_IDE.exe</PackagePath>
+      <Modified>2018-12-05T14:30:39.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\HW2_GUI_1_IDE.winmd">
+      <PackagePath>HW2_GUI_1_IDE.winmd</PackagePath>
+      <Modified>2018-12-05T14:30:36.771</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\HW2_GUI_1_IDE\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-11-15T16:23:44.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2018-12-05T14:30:37.010</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2018-12-05T14:30:37.010</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\X64\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2017-09-28T20:28:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\HW2_GUI_1_IDE\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-12-05T14:30:40.534</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.26726.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26726.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
