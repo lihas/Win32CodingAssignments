@@ -1,38 +1,14 @@
-#include <windows.h>
+#include "Common.h"
 #include <windowsx.h>
 #include "resource.h"
 #include <string>
+#include "..\UserDataStoreFileIO\FileIO.h"
 
 constexpr TCHAR AppName[] = TEXT("UserDataStore");
 
 //Custom Message
 #define WM_saveDlgData (WM_USER+1001) //lParam -> DlgData
 #define ID_MONITOR_DLG_TIMER (WM_USER+1002)
-
-//Structures
-enum class gender
-{
-    MALE,
-    FEMALE,
-    OTHER
-};
-
-//Structures
-enum class Gender
-{
-    MALE,
-    FEMALE,
-    OTHER
-};
-
-
-struct DlgData {
-    TCHAR name[MAX_PATH];
-    UINT age;
-    UINT salary;
-    Gender gender;
-    bool isMarried;    
-};
 
 //prototypes
 LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
@@ -48,6 +24,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
     wc.hInstance = hInstance;
     wc.lpfnWndProc = WndProc;
     wc.style = CS_VREDRAW | CS_HREDRAW;
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 
     if (!RegisterClassEx(&wc))
     {
@@ -74,6 +51,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
     static HINSTANCE hInstance;
     static bool userDataPresent = false;
     static DlgData dlgData;
+    static int userCount = 0;
+    static bool newDataAvailable = false;
+    static auto hLib = LoadLibrary("UserDataStoreFileIO.dll");
+    static SaveDataToFile_t SaveDataToFile = (SaveDataToFile_t)GetProcAddress(hLib, "SaveDataToFile");
 
     switch (iMsg)
     {
@@ -98,7 +79,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
         }
         else
         {//Show data entered by user
-            SetTextColor(hdc, RGB(255, 255, 255));
+            SetTextColor(hdc, RGB(0, 255, 0));
             SetBkColor(hdc, RGB(0, 0, 0));
             DrawText(hdc, "Press 'F' to save data to a file", -1, &rc, DT_VCENTER | DT_CENTER | DT_SINGLELINE);
 
@@ -163,6 +144,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
         case VK_SPACE:
         {
             //Modal
+            userCount++;
             auto res = DialogBox(hInstance, "UserDataStore", hwnd, DlgProc);
             if (res == IDOK)//User clicked OK
             {
@@ -170,8 +152,33 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
+        case VK_ESCAPE:
+        {
+            DestroyWindow(hwnd);
+            return DefWindowProc(hwnd, iMsg, wParam, lParam);
+        }
+        break;
         default:
             break;
+        }
+    }
+    break;
+    case WM_CHAR:
+    {
+        auto keyPressed = wParam;
+        if (keyPressed == 'f' || keyPressed == 'F')
+        {
+            //save data
+            if (newDataAvailable)
+            {
+                auto path = SaveDataToFile(dlgData, userCount);
+                newDataAvailable = false;
+                MessageBoxA(hwnd, path.c_str(), "Data saved successfully to file", MB_OK | MB_ICONINFORMATION);
+            }
+            else
+            {
+                MessageBoxA(hwnd, "File containing your information has already been saved", "Error", MB_OK | MB_ICONERROR);
+            }
         }
     }
     break;
@@ -179,6 +186,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
     {
         dlgData = *(DlgData*)(lParam);//copy
         userDataPresent = true;
+        newDataAvailable = true;
         InvalidateRect(hwnd, NULL, TRUE);
     }
     break;

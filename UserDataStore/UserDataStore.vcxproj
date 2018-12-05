@@ -118,6 +118,7 @@
     <ClCompile Include="UserDataStore.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

@@ -5,11 +5,10 @@
 #include "NotificationActivator.h"
 #include <propvarutil.h>
 #include <propkey.h>
+#include"Common.h"
+#include "ShellLink.h"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-
-wchar_t AppUserModelId[] = L"lihas.in.toast1";
-wchar_t ToastActivatorCLSID[] = L"{99E1217A-5423-46A0-8EF9-C327B8A28185}";
 
 //global
 bool raiseToast = false;
@@ -21,9 +20,16 @@ int raise(ComPtr<IXmlDocument>& doc);
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int iCmdShow)
 {
     auto hr = CoInitialize(NULL);
+    
+    /*{
+        TryCreateShortcut();
+        CoUninitialize();
+        return 0;
+    }*/
     if (FAILED(hr))
     {
         MessageBox(NULL, TEXT("COM Library cannot be initialized.\n Program will now exit"), TEXT("Program Error"), MB_OK);
+        CoUninitialize();
         exit(0);
     }
 
@@ -41,6 +47,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
     if (hr != S_OK)
     {
         MessageBoxA(NULL, "RegisterAumidAndComServer() Failed", "Error", MB_OK);
+        CoUninitialize();
         return -1;
     }
 
@@ -49,10 +56,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
     if (hr != S_OK)
     {
         MessageBoxA(NULL, "RegisterActivator() Failed", "Error", MB_OK);
+        CoUninitialize();
         return -1;
     }
 
-    hr = DesktopNotificationManagerCompat::CreateXmlDocumentFromString(L"<toast><visual><binding template='ToastGeneric'><text>Hello World</text></binding></visual></toast>", &doc);
+    hr = DesktopNotificationManagerCompat::CreateXmlDocumentFromString(
+        LR"(<?xml version="1.0"?><toast><visual><binding template='ToastGeneric'><text>Hello World</text></binding></visual><actions><input id = "tbReply" type="text" placeHolderContent="Type a response" /><action content = "Reply" arguments="action=reply&amp;conversationId=384928" activationType="background" hint-inputId="tbReply" /></actions></toast>)"
+        , &doc);
 
     if (SUCCEEDED(hr))
     {
@@ -61,6 +71,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
     else
     {
         MessageBoxA(NULL, "CreateXmlDocumentFromString() Failed", "Error", MB_OK);
+        CoUninitialize();
         return -1;
     }
 
@@ -78,6 +89,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
     if (!RegisterClassEx(&wc))
     {
         MessageBoxA(NULL, "RegisterClassEx() Failed", "Error", MB_OK);
+        CoUninitialize();
         return -1;
     }
 
@@ -93,6 +105,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
         DispatchMessage(&msg);
     }
 
+    CoUninitialize();
     return int(msg.wParam);
 
 }
@@ -198,4 +211,27 @@ int raise(ComPtr<IXmlDocument>& doc)
         return -1;
     }
 
+    return 0;
 }
+
+/*
+XML from C# example
+<?xml version=\"1.0\"?>
+<toast launch=\"action=viewConversation&amp;conversationId=384928\">
+<visual>
+<binding template=\"ToastGeneric\">
+<text>Andrew sent you a pciture</text>
+<text>Check this out</text>
+<image src=\"https://storage.googleapis.com/graphicriver-149805.appspot.com/sreda/AnimatedFire/Test-8.gif\"/>
+<image src=\"ms-appdata:///local/StoreLogo.png\" placement=\"appLogoOverride\" hint-crop=\"circle\"/>
+</binding>
+</visual>
+<actions>
+<input id=\"tbReply\" type=\"text\" placeHolderContent=\"Type a response\"/>
+<action content=\"Reply\" arguments=\"action=reply&amp;conversationId=384928\" activationType=\"background\" imageUri=\"Assets/StoreLogo.png\" hint-inputId=\"tbReply\"/>
+<action content=\"Like\" arguments=\"action=like&amp;conversationId=384928\" activationType=\"background\"/>
+<action content=\"View\" arguments=\"action=ViewImage&amp;imageUrl=https%3A%2F%2Fstorage.googleapis.com%2Fgraphicriver-149805.appspot.com%2Fsreda%2FAnimatedFire%2FTest-8.gif\"/>
+</actions>
+</toast>"
+
+*/
