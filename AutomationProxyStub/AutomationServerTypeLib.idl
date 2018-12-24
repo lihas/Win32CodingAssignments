@@ -1,0 +1,35 @@
+import "unknwn.idl";
+//IMyMath Interface
+[
+    object,
+    uuid(A74D05B6-C656-4B8C-BF2B-E9B2E1E1E896), //IID of IMyMath
+    helpstring("IMyMath interface"),
+    pointer_default(unique),
+    dual,//Supports both - class factory, and IDispatch
+    oleautomation
+]
+interface IMyMath : IDispatch
+{
+    import "oaidl.idl";
+    HRESULT SumOfTwoIntegers([in] int, [in] int, [out, retval] int *);
+    HRESULT SubtractionOfTwoIntegers([in] int, [in] int, [out, retval] int*);
+};
+//The actual TypeLib related code
+[
+    uuid(D625B198-FBC0-4814-8109-62607ECCA9E1), //LIBID of Type Library
+    version(1.0), //major.minor version numbers
+    helpstring("MyMath Component's Type Library")
+]
+library AutomationServerTypeLib
+{
+    importlib("stdole32.tlb");
+    //component code
+    [
+        uuid(8DCE162D-7C38-4AAF-9CFA-6882EF11FD2D), //CLSID of MyMath Component
+        helpstring("MyMath Automation Component Class")
+    ]
+    coclass CMyMath
+    {
+        [default]interface IMyMath;
+    };
+};
