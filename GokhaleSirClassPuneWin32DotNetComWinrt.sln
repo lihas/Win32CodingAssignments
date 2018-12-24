@@ -220,14 +220,27 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutomationServerWithRegFile
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutomationProxyStub", "AutomationProxyStub\AutomationProxyStub.vcxproj", "{BA21AE63-2E14-4DB0-A910-D3ED5C998668}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "903-Misc", "903-Misc", "{1ABEB532-896C-4152-A75F-0ED8FD25FA37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "903-AuxiliaryStuff", "903-AuxiliaryStuff", "{1ABEB532-896C-4152-A75F-0ED8FD25FA37}"
 	ProjectSection(SolutionItems) = preProject
-		regtlibv12.exe = regtlibv12.exe
+		AuxiliaryStuff\pdfbox-app-2.0.11.jar = AuxiliaryStuff\pdfbox-app-2.0.11.jar
+		AuxiliaryStuff\regtlibv12.exe = AuxiliaryStuff\regtlibv12.exe
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IClassFactoryAutomationClient", "IClassFactoryAutomationClient\IClassFactoryAutomationClient.vcxproj", "{8168D284-AC0A-4039-A04E-BE797B16454E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IDispatchAutomationClient", "IDispatchAutomationClient\IDispatchAutomationClient.vcxproj", "{80E5359F-76D2-44CB-8105-5A181B0C300F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharpAutomationClient", "CSharpAutomationClient", "{E132DFAA-2F01-4227-8EE9-43421E5DB212}"
+	ProjectSection(SolutionItems) = preProject
+		CSharpAutomationClient\CSharpAutomationClient.cs = CSharpAutomationClient\CSharpAutomationClient.cs
+		CSharpAutomationClient\README.txt = CSharpAutomationClient\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualBasicAutomationClient", "VisualBasicAutomationClient", "{928C05F4-975C-4280-A146-32B3539F3FBE}"
+	ProjectSection(SolutionItems) = preProject
+		VisualBasicAutomationClient\README.txt = VisualBasicAutomationClient\README.txt
+		VisualBasicAutomationClient\VBAutomationClient.vb = VisualBasicAutomationClient\VBAutomationClient.vb
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -957,6 +970,8 @@ Global
 		{BA21AE63-2E14-4DB0-A910-D3ED5C998668} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
 		{8168D284-AC0A-4039-A04E-BE797B16454E} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
 		{80E5359F-76D2-44CB-8105-5A181B0C300F} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
+		{E132DFAA-2F01-4227-8EE9-43421E5DB212} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
+		{928C05F4-975C-4280-A146-32B3539F3FBE} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4AE1A065-B741-4555-A616-35C2100732D9}
