@@ -1,0 +1,3 @@
+LIBRARY CCW_NATIVE_DLL
+EXPORTS
+    calc_area_circle PRIVATE

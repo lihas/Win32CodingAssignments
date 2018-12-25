@@ -5,6 +5,7 @@ namespace dialog {
     void Run(HINSTANCE hInstance);
     void enableBoyles(HWND hwnd, BOOL enable = TRUE);
     void enableCharles(HWND hwnd, BOOL enable = TRUE);
+    void enableMaths(HWND hDlg, BOOL enable = TRUE);
     void boylesSetP(HWND hDlg, float P);
     void boylesSetV(HWND hDlg, float V);
     BOOL reset1(HWND hwnd);

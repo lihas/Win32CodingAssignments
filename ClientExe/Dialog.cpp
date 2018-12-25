@@ -15,14 +15,21 @@
 #define TSCROLL_MIN 1
 #define TSCROLL_MAX 100
 
+#define DIALOG_SCROLL_MIN 0
+#define DIALOG_SCROLL_MAX 500
+#define DIALOG_SCROLL_DELTA 20
+
 float boyles_P = 0, boyles_V = 0, boyles_T = 273;
+
+typedef double(*calc_area_circle_type)(int radius);
+calc_area_circle_type calc_area_circle;
 
 namespace dialog
 {
 
     void Run(HINSTANCE hInstance)
     {
-        DialogBox(hInstance, TEXT("ProjectDialog"), NULL, DialogProc);
+        DialogBox(hInstance, MAKEINTRESOURCE(ProjectDialog), NULL, DialogProc);
     }
 
     INT_PTR CALLBACK DialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -37,12 +44,28 @@ namespace dialog
         {
             CheckRadioButton(hwnd, IDC_SUBJECT_RADIO1, IDC_SUBJECT_RADIO1, IDC_SUBJECT_RADIO1);
             dialog::enableCharles(hwnd, FALSE);
+            dialog::enableMaths(hwnd, FALSE);
             reset1(hwnd);
 
             auto hr = CoCreateInstance(CLSID_Molarity, NULL, CLSCTX_INPROC_SERVER, IID_IMolarity, (void**)&pMolarity);
             if (FAILED(hr))
             {
                 MessageBox(hwnd, TEXT("IMolarity interface cannot be obtained"), TEXT("ERROR"), MB_OK);
+                EndDialog(hwnd, -1);
+            }
+
+            //Init CCW
+            auto hModule = LoadLibraryA("CCW_NATIVE_DLL.dll");
+            if (NULL == hModule)
+            {
+                MessageBoxA(hwnd, "LoadLibraryA CCW_NATIVE_DLL", "Error", MB_OK);
+                EndDialog(hwnd, -1);
+            }
+
+            calc_area_circle = (calc_area_circle_type)GetProcAddress(hModule, "calc_area_circle");
+            if (NULL == calc_area_circle)
+            {
+                MessageBoxA(hwnd, "GetProcAddress calc_area_circle", "Error", MB_OK);
                 EndDialog(hwnd, -1);
             }
 
@@ -53,8 +76,19 @@ namespace dialog
         case WM_HSCROLL:
         {
             auto hCtrl = (HWND)lParam;
-            auto ctrlId = GetWindowLong(hCtrl, GWL_ID);
-            int scrlPos = GetScrollPos(hCtrl, SB_CTL);
+            
+            long ctrlId = ProjectDialog;//hCtrl is null when dialog scrollbar is moved
+            int scrlPos;
+            if (hCtrl)
+            {
+                ctrlId = GetWindowLong(hCtrl, GWL_ID);
+                scrlPos = GetScrollPos(hCtrl, SB_CTL);
+            }
+            else
+            {
+                scrlPos = GetScrollPos(hwnd, SB_HORZ);
+            }
+
             switch (LOWORD(wParam))
             {
             case SB_LINELEFT:
@@ -77,7 +111,15 @@ namespace dialog
                         boyles_V = VSCROLL_MIN;
                     }
                     boylesSetV(hwnd, boyles_V);
-                    
+                }
+                else if (ctrlId == ProjectDialog)
+                {//dialog's scroll bar
+                    scrlPos -= DIALOG_SCROLL_DELTA;
+                    if ((scrlPos >= DIALOG_SCROLL_MIN) && (scrlPos <= DIALOG_SCROLL_MAX))
+                    {
+                        ScrollWindowEx(hwnd, DIALOG_SCROLL_DELTA, 0, NULL, NULL, NULL, NULL, SW_INVALIDATE | SW_SCROLLCHILDREN | SW_ERASE);
+                        SetScrollPos(hwnd, SB_HORZ, scrlPos, FALSE);
+                    }
                 }
             }
             break;
@@ -94,6 +136,15 @@ namespace dialog
                     boyles_V++;
                     boylesSetV(hwnd, boyles_V);
 
+                }
+                else if (ctrlId == ProjectDialog)
+                {//dialog's scroll bar
+                    scrlPos += DIALOG_SCROLL_DELTA;
+                    if ((scrlPos >= DIALOG_SCROLL_MIN) && (scrlPos <= DIALOG_SCROLL_MAX))
+                    {
+                        ScrollWindowEx(hwnd, -DIALOG_SCROLL_DELTA, 0, NULL, NULL, NULL, NULL, SW_INVALIDATE | SW_SCROLLCHILDREN | SW_ERASE);
+                        SetScrollPos(hwnd, SB_HORZ, scrlPos, FALSE);
+                    }
                 }
             }
             break;
@@ -121,6 +172,11 @@ namespace dialog
                 {
                     boylesSetV(hwnd, scrlPos);
 
+                }
+                else if (ctrlId == ProjectDialog)
+                {//dialog's scroll bar
+                    //SetScrollPos(hwnd, SB_HORZ, scrlPos, FALSE);
+                    
                 }
             }
             break;
@@ -173,6 +229,16 @@ namespace dialog
         }*/
             switch (LOWORD(wParam))
             {
+            case IDC_compute3:
+            {
+                TCHAR buff[MAX_PATH];
+                GetDlgItemText(hwnd, IDC_RADIUS, buff, MAX_PATH);
+                int radius = atoi(buff);
+                double area = calc_area_circle(radius);
+                SetDlgItemText(hwnd, IDC_AREA, std::to_string(area).c_str());
+            }
+            break;
+
             case IDC_compute2:
             {
                 TCHAR buff[MAX_PATH];
@@ -232,6 +298,7 @@ namespace dialog
                 {
                     dialog::enableCharles(hwnd, FALSE);
                     dialog::enableBoyles(hwnd, TRUE);
+                    dialog::enableMaths(hwnd, FALSE);
              
                 }
             }
@@ -242,6 +309,18 @@ namespace dialog
                 {
                     dialog::enableCharles(hwnd, TRUE);
                     dialog::enableBoyles(hwnd, FALSE);
+                    dialog::enableMaths(hwnd, FALSE);
+                }
+            }
+            break;
+            case IDC_SUBJECT_RADIO3:
+            {
+                if (HIWORD(wParam) == BN_CLICKED)
+                {
+                    dialog::enableCharles(hwnd, FALSE);
+                    dialog::enableBoyles(hwnd, FALSE);
+                    dialog::enableMaths(hwnd, TRUE);
+
                 }
             }
             break;
@@ -357,6 +436,16 @@ namespace dialog
             EnableWindow(ctrl, enable);
         }
     }
+
+    void enableMaths(HWND hDlg, BOOL enable)
+    {
+        for (int i = IDC_GROUP3; i <= IDC_compute3; i++)
+        {
+            auto ctrl = GetDlgItem(hDlg, i);
+            EnableWindow(ctrl, enable);
+        }
+    }
+
     BOOL reset1(HWND hwnd)
     {
         HWND hScroll = GetDlgItem(hwnd, IDC_PS);
@@ -370,6 +459,9 @@ namespace dialog
 
         hScroll = GetDlgItem(hwnd, IDC_VS2);
         SetScrollRange(hScroll, SB_CTL, VSCROLL_MIN, VSCROLL_MAX, FALSE);
+
+        SetScrollRange(hwnd, SB_HORZ, DIALOG_SCROLL_MIN, DIALOG_SCROLL_MAX, FALSE);
+        SetScrollPos(hwnd, SB_HORZ, DIALOG_SCROLL_MIN, FALSE);
 
         SetDlgItemText(hwnd, IDC_MOLES, "1");
         SetDlgItemText(hwnd, IDC_KELVIN, "273");

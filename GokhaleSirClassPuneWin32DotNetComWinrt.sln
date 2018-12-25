@@ -232,15 +232,32 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IDispatchAutomationClient",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharpAutomationClient", "CSharpAutomationClient", "{E132DFAA-2F01-4227-8EE9-43421E5DB212}"
 	ProjectSection(SolutionItems) = preProject
+		CSharpAutomationClient\AutomationServerTypeLibForDotNet.dll = CSharpAutomationClient\AutomationServerTypeLibForDotNet.dll
 		CSharpAutomationClient\CSharpAutomationClient.cs = CSharpAutomationClient\CSharpAutomationClient.cs
+		CSharpAutomationClient\CSharpAutomationClient.exe = CSharpAutomationClient\CSharpAutomationClient.exe
 		CSharpAutomationClient\README.txt = CSharpAutomationClient\README.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualBasicAutomationClient", "VisualBasicAutomationClient", "{928C05F4-975C-4280-A146-32B3539F3FBE}"
 	ProjectSection(SolutionItems) = preProject
+		VisualBasicAutomationClient\AutomationServerTypeLibForDotNet.dll = VisualBasicAutomationClient\AutomationServerTypeLibForDotNet.dll
 		VisualBasicAutomationClient\README.txt = VisualBasicAutomationClient\README.txt
+		VisualBasicAutomationClient\VBAutomationClient.exe = VisualBasicAutomationClient\VBAutomationClient.exe
 		VisualBasicAutomationClient\VBAutomationClient.vb = VisualBasicAutomationClient\VBAutomationClient.vb
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DialogBoxScrollBar", "DialogBoxScrollBar\DialogBoxScrollBar.vcxproj", "{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CCW_ComCallableWrapper_DotNetComponent", "CCW_ComCallableWrapper_DotNetComponent", "{D5F3488F-D293-4244-8376-086B60C2B6D9}"
+	ProjectSection(SolutionItems) = preProject
+		CCW_ComCallableWrapper_DotNetComponent\CalcArea.cs = CCW_ComCallableWrapper_DotNetComponent\CalcArea.cs
+		CCW_ComCallableWrapper_DotNetComponent\CalcArea.dll = CCW_ComCallableWrapper_DotNetComponent\CalcArea.dll
+		CCW_ComCallableWrapper_DotNetComponent\CalcArea.tlb = CCW_ComCallableWrapper_DotNetComponent\CalcArea.tlb
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CCW_NATIVE_DLL", "CCW_NATIVE_DLL\CCW_NATIVE_DLL.vcxproj", "{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "App1", "App1\App1.vcxproj", "{E5449618-F4EE-49E3-B45B-EA02C800F3CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -880,6 +897,44 @@ Global
 		{80E5359F-76D2-44CB-8105-5A181B0C300F}.Release|x64.Build.0 = Release|x64
 		{80E5359F-76D2-44CB-8105-5A181B0C300F}.Release|x86.ActiveCfg = Release|Win32
 		{80E5359F-76D2-44CB-8105-5A181B0C300F}.Release|x86.Build.0 = Release|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Debug|x64.ActiveCfg = Debug|x64
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Debug|x64.Build.0 = Debug|x64
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Debug|x86.Build.0 = Debug|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Release|ARM.ActiveCfg = Release|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Release|x64.ActiveCfg = Release|x64
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Release|x64.Build.0 = Release|x64
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Release|x86.ActiveCfg = Release|Win32
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6}.Release|x86.Build.0 = Release|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Debug|ARM.ActiveCfg = Debug|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Debug|x64.ActiveCfg = Debug|x64
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Debug|x64.Build.0 = Debug|x64
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Debug|x86.ActiveCfg = Debug|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Debug|x86.Build.0 = Debug|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Release|ARM.ActiveCfg = Release|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Release|x64.ActiveCfg = Release|x64
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Release|x64.Build.0 = Release|x64
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Release|x86.ActiveCfg = Release|Win32
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B}.Release|x86.Build.0 = Release|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|ARM.Build.0 = Debug|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x64.ActiveCfg = Debug|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x64.Build.0 = Debug|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x64.Deploy.0 = Debug|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x86.Build.0 = Debug|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Debug|x86.Deploy.0 = Debug|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|ARM.ActiveCfg = Release|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|ARM.Build.0 = Release|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|ARM.Deploy.0 = Release|ARM
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x64.ActiveCfg = Release|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x64.Build.0 = Release|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x64.Deploy.0 = Release|x64
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x86.ActiveCfg = Release|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x86.Build.0 = Release|Win32
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD}.Release|x86.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -972,6 +1027,10 @@ Global
 		{80E5359F-76D2-44CB-8105-5A181B0C300F} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
 		{E132DFAA-2F01-4227-8EE9-43421E5DB212} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
 		{928C05F4-975C-4280-A146-32B3539F3FBE} = {1B1A93B6-9BC1-4B63-A59E-B76F0995916D}
+		{C1A85E6C-FB02-4703-B0EF-7D9FDF6C10B6} = {F4E31E4D-5A87-4FD0-9B4B-4A5D968CE931}
+		{D5F3488F-D293-4244-8376-086B60C2B6D9} = {8342AC80-3DE7-44FC-B19B-88C0327D37F2}
+		{D7CBE9C3-BCB1-476C-A1D8-F0C65F10DA3B} = {8342AC80-3DE7-44FC-B19B-88C0327D37F2}
+		{E5449618-F4EE-49E3-B45B-EA02C800F3CD} = {8342AC80-3DE7-44FC-B19B-88C0327D37F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4AE1A065-B741-4555-A616-35C2100732D9}
