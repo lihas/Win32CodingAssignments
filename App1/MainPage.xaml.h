@@ -6,6 +6,8 @@
 #pragma once
 
 #include "MainPage.g.h"
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::UI::Xaml;
 
 namespace App1
 {
@@ -17,5 +19,9 @@ namespace App1
 	public:
 		MainPage();
 
-	};
+    private:
+        void button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+    public:
+        void OnButtonDownCreateFile(Object^ sender, RoutedEventArgs^ args);
+    };
 }

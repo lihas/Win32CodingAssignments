@@ -8,7 +8,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <!--<Grid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="198,201,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="275" Width="1074"/>
+        <Button x:Name="Create_File" Content="Button" HorizontalAlignment="Left" Margin="198,760,0,0" VerticalAlignment="Top" Click="button_Click" Height="114" Width="390"/>
 
-    </Grid>
+    </Grid>-->
 </Page>

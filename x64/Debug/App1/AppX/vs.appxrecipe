@@ -30,17 +30,17 @@
     <AppXManifest Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\App1\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-25T14:20:47.189</Modified>
+      <Modified>2018-12-28T14:18:41.792</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\App1\UWP_APP.exe">
       <PackagePath>UWP_APP.exe</PackagePath>
-      <Modified>2018-12-25T14:19:40.940</Modified>
+      <Modified>2018-12-31T18:11:06.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\App1\App1.winmd">
       <PackagePath>App1.winmd</PackagePath>
-      <Modified>2018-12-25T13:21:48.672</Modified>
+      <Modified>2018-12-31T18:06:21.814</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\App1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -82,7 +82,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\App1\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-25T13:21:48.852</Modified>
+      <Modified>2018-12-31T17:48:12.863</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -91,7 +91,7 @@
     <AppxPackagedFile Include="C:\Users\sahils\Documents\Visual Studio 2017\Projects\GokhaleSirClassPuneWin32DotNetComWinrt\x64\Debug\App1\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-25T14:20:47.125</Modified>
+      <Modified>2018-12-28T14:18:41.618</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

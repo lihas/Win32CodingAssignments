@@ -5,6 +5,8 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include <experimental/resumable>
+#include <pplawait.h>
 
 using namespace App1;
 
@@ -22,6 +24,7 @@ using namespace Windows::UI::Xaml::Interop;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::Storage;
+using namespace std::experimental;
 
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of authored code
@@ -108,11 +111,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
     });*/
 
 
-    auto asyncOp = Windows::Storage::DownloadsFolder::CreateFileAsync("WinrtAppFile.txt", Windows::Storage::CreationCollisionOption::FailIfExists);
-    asyncOp->Completed = ref new AsyncOperationCompletedHandler<StorageFile^>([](IAsyncOperation<StorageFile^>^ asyncOperation, AsyncStatus asyncstatus) {
-        auto file = asyncOperation->GetResults();
-        FileIO::WriteTextAsync(file, "Hello from UWP");
-    });
 }
 
 /// <summary>
