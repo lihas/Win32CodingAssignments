@@ -17,4 +17,5 @@ This repo contains all the code I wrote during the course of the class.
  * WinRt
  
 
-
+## Website for more information on such classes
+ [astromedicomp.org](http://astromedicomp.org/)
