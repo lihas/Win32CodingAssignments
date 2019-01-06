@@ -16,6 +16,7 @@ This repo contains all the code I wrote during the course of the class.
 * .Net
 * WinRt
  
-
+## Installer fo final class project
+	win32SdkProjectInstaller\Debug\win32SdkProjectInstaller.msi
 ## Website for more information on such classes
  [astromedicomp.org](http://astromedicomp.org/)
