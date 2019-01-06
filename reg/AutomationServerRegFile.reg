@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{8DCE162D-7C38-4AAF-9CFA-6882EF11FD2D}]
+@="AutomationServerWithRegFile"
+[HKEY_CLASSES_ROOT\CLSID\{8DCE162D-7C38-4AAF-9CFA-6882EF11FD2D}\InprocServer32]
+@="C:\\Users\\sahils\\Documents\\Visual Studio 2017\\Projects\\GokhaleSirClassPuneWin32DotNetComWinrt\\x64\\Debug\\AutomationServerWithRegFile.dll"
